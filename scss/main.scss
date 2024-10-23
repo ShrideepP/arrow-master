@@ -1,0 +1,235 @@
+@use "./base/index" as *;
+
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+
+  font-family: "Press Start 2P", system-ui !important;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.main-container {
+  width: 100vw;
+  height: 100vh;
+  padding: 9rem 0;
+  display: flex;
+  justify-content: center;
+  background-color: $background-color;
+
+  .btn {
+    width: fit-content;
+    padding: 1rem 2rem;
+    position: relative;
+    cursor: pointer;
+    font-size: 0.75rem;
+    color: transparent;
+    line-height: 1.15;
+    letter-spacing: -0.025em;
+    border-image-width: 2;
+    border-image-slice: 2;
+    border-image-outset: 2;
+    border-image-repeat: stretch;
+    border-image-source: url("../assets/border-image.svg");
+    outline: none;
+    background: none;
+  }
+
+  .btn::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-right: 0.125rem solid rgba($text-color, 0.125);
+    border-bottom: 0.125rem solid rgba($text-color, 0.125);
+  }
+
+  .btn:hover::before {
+    border: none;
+  }
+
+  .btn::after {
+    position: absolute;
+    inset: 0;
+    font-size: 0.75rem;
+    line-height: 1.15;
+    letter-spacing: -0.025em;
+    display: grid;
+    place-content: center;
+  }
+
+  .btn:hover::after {
+    background: rgba($text-color, 0.125);
+  }
+
+  .btn--primary {
+    background: $accent-color;
+  }
+
+  .btn--secondary {
+    background: $border-color;
+  }
+
+  .btn--primary::after {
+    color: $background-color;
+  }
+
+  .btn--secondary::after {
+    color: $text-color;
+  }
+
+  .btn--icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    position: relative;
+    cursor: pointer;
+    display: grid;
+    place-content: center;
+    border-image-width: 2;
+    border-image-slice: 2;
+    border-image-outset: 2;
+    border-image-repeat: stretch;
+    border-image-source: url("../assets/border-image.svg");
+    outline: none;
+    background: $background-color;
+  }
+
+  .btn--icon::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-right: 0.125rem solid rgba($text-color, 0.125);
+    border-bottom: 0.125rem solid rgba($text-color, 0.125);
+  }
+
+  .btn--icon:hover::before {
+    border: none;
+  }
+
+  .btn--icon img {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .btn--icon::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    font-size: 0.75rem;
+    line-height: 1.15;
+    letter-spacing: -0.025em;
+    display: grid;
+    place-content: center;
+  }
+
+  .btn--icon:hover::after {
+    background: rgba($text-color, 0.125);
+  }
+}
+
+.lobby {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 2rem;
+
+  &__image {
+    width: 18rem;
+    height: 18rem;
+    object-fit: cover;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 2rem;
+
+    &-headline {
+      font-size: 1.25rem;
+      color: $text-color;
+      line-height: 1.15;
+      letter-spacing: -0.025em;
+    }
+
+    &-btn-group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    &-btn-group .btn--primary::after {
+      content: "Play Now";
+    }
+
+    &-btn-group .btn--secondary::after {
+      content: "High Score";
+    }
+  }
+}
+
+.stage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 4rem;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 2rem;
+
+    &-timer {
+      font-size: 2.5rem;
+      color: $text-color;
+      line-height: 1.15;
+      letter-spacing: -0.025em;
+    }
+
+    .btn--primary::after {
+      content: "Start Game";
+    }
+  }
+
+  &__arrows {
+    display: flex;
+    align-items: center;
+    column-gap: 2rem;
+  }
+}
+
+.score {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 2rem;
+
+  &__headline {
+    font-size: 1.25rem;
+    color: $text-color;
+    line-height: 1.15;
+    letter-spacing: -0.025em;
+  }
+
+  &__subheadline {
+    font-size: 0.75rem;
+    color: $text-color;
+    line-height: 1.15;
+    letter-spacing: -0.025em;
+  }
+
+  .btn--primary::after {
+    content: "Play Again";
+  }
+}

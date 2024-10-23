@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Document</title>
+    <meta name="description" content="" />
+
+    <link rel="stylesheet" href="./scss/main.css" />
+    <script defer src="./app.js"></script>
+  </head>
+
+  <body>
+    <main class="main-container">
+      <header class="lobby">
+        <img
+          class="lobby__image"
+          src="./assets/arrow-master-poster.jpeg"
+          alt="Retro computer with arrows on a green screen and a joystick console below."
+        />
+
+        <div class="lobby__content">
+          <h1 class="lobby__content-headline">Arrow Master</h1>
+
+          <div class="lobby__content-btn-group">
+            <button type="button" class="btn btn--primary">Play Now</button>
+
+            <button type="button" class="btn btn--secondary">High Score</button>
+          </div>
+        </div>
+      </header>
+
+      <section class="stage" style="display: none">
+        <div class="stage__content">
+          <button type="button" class="btn--icon">
+            <img
+              src="./assets/arrow-left.svg"
+              alt="Pixelated left arrow icon pointing to the left."
+            />
+          </button>
+
+          <h4 class="stage__content-timer">00:00.00</h4>
+
+          <button type="button" class="btn btn--primary">Start Game</button>
+        </div>
+
+        <div class="stage__arrows">
+          <!-- Pixelated arrow icon. -->
+        </div>
+      </section>
+
+      <div class="score" style="display: none">
+        <h4 class="score__headline">Game Completed!</h4>
+
+        <p class="score__subheadline">
+          Your time: [time]. Ready to play again?
+        </p>
+
+        <button type="button" class="btn btn--primary">Play Again</button>
+      </div>
+    </main>
+  </body>
+</html>
