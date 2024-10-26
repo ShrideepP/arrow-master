@@ -4,8 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Document</title>
-    <meta name="description" content="" />
+    <title>Arrow Master - A Fun Little Game for Your Keyboard Skills</title>
+    <meta
+      name="description"
+      content="Press the right keys in the right order! Arrow Master is a lighthearted retro game best enjoyed on a bigger screen. Good luck, arrow warrior!"
+    />
 
     <link rel="stylesheet" href="./scss/main.css" />
     <script defer src="./app.js"></script>
@@ -26,12 +29,18 @@
           <div class="lobby__content-btn-group">
             <button type="button" class="btn btn--primary">Play Now</button>
 
-            <button type="button" class="btn btn--secondary">High Score</button>
+            <button
+              type="button"
+              class="btn btn--secondary"
+              onclick="alert('High score feature not found. Must be hiding with your socks!')"
+            >
+              High Score
+            </button>
           </div>
         </div>
       </header>
 
-      <section class="stage" style="display: none">
+      <section class="stage">
         <div class="stage__content">
           <button type="button" class="btn--icon">
             <img
@@ -45,12 +54,10 @@
           <button type="button" class="btn btn--primary">Start Game</button>
         </div>
 
-        <div class="stage__arrows">
-          <!-- Pixelated arrow icon. -->
-        </div>
+        <div class="stage__arrows-container"></div>
       </section>
 
-      <div class="score" style="display: none">
+      <div class="score">
         <h4 class="score__headline">Game Completed!</h4>
 
         <p class="score__subheadline">
@@ -60,5 +67,84 @@
         <button type="button" class="btn btn--primary">Play Again</button>
       </div>
     </main>
+
+    <div class="screen-warning">
+      <p class="screen-warning__message">
+        Oops! This game needs a bit more legroom. Try playing on a bigger
+        screen!
+      </p>
+    </div>
+
+    <template class="key-icon">
+      <svg
+        width="100"
+        height="100"
+        viewBox="0 0 100 100"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        data-key="ArrowUp"
+      >
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M5.5547 83.3324H0V11.1094H5.5547V83.3324ZM5.5547 11.1094V5.5547H11.1094V11.1094H5.5547ZM11.1094 5.5547V0H88.8864V5.5547H11.1094ZM88.8864 5.5547H94.4411V11.1094H88.8864V5.5547ZM94.4411 11.1094H99.9958V83.3324H94.4411V11.1094ZM94.4411 83.3324V94.4414H83.3321V99.9961H16.6641V94.4414H5.5551L5.5547 83.3324H16.6641V88.8871H83.3321V83.3324H94.4411ZM21.5231 21.5274V30.8321H12.2184V21.5274H21.5231ZM21.5231 21.5274V12.2227H30.8278V21.5274H21.5231ZM42.7731 46.3864H27.7731V40.8317H33.3278V35.277H38.8825V29.7223H44.4372V24.1676H55.5462V29.7223H61.1009V35.277H66.6556V40.8317H72.2103V46.3864H57.2103V74.1634H55.5423V75.8314H44.4333V74.1634H42.7653V46.3864H42.7731Z"
+          fill="#e5e5e5"
+        />
+      </svg>
+    </template>
+
+    <template class="key-icon">
+      <svg
+        width="100"
+        height="100"
+        viewBox="0 0 100 100"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        data-key="ArrowRight"
+      >
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M5.5547 83.3324H0V11.1094H5.5547V83.3324ZM5.5547 11.1094V5.5547H11.1094V11.1094H5.5547ZM11.1094 5.5547V0H88.8864V5.5547H11.1094ZM88.8864 5.5547H94.4411V11.1094H88.8864V5.5547ZM94.4411 11.1094H99.9958V83.3324H94.4411V11.1094ZM94.4411 83.3324V94.4414H83.3321V99.9961H16.6641V94.4414H5.5551L5.5547 83.3324H16.6641V88.8871H83.3321V83.3324H94.4411ZM25.8321 55.5554H24.1641V44.4464H25.8321V42.7784H53.6091V27.7784H59.1638V33.3331H64.7185V38.8878H70.2732V44.4425H75.8279V55.5515H70.2732V61.1062H64.7185V66.6609H59.1638V72.2156H53.6091V57.2156H25.8321V55.5476V55.5554ZM21.5274 21.5284V30.8331H12.2227V21.5284H21.5274ZM21.5274 21.5284V12.2237H30.8321V21.5284H21.5274Z"
+          fill="#e5e5e5"
+        />
+      </svg>
+    </template>
+
+    <template class="key-icon">
+      <svg
+        width="100"
+        height="100"
+        viewBox="0 0 100 100"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        data-key="ArrowDown"
+      >
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M5.5547 83.3324H0V11.1094H5.5547V83.3324ZM5.5547 11.1094V5.5547H11.1094V11.1094H5.5547ZM11.1094 5.5547V0H88.8864V5.5547H11.1094ZM88.8864 5.5547H94.4411V11.1094H88.8864V5.5547ZM94.4411 11.1094H99.9958V83.3324H94.4411V11.1094ZM94.4411 83.3324V94.4414H83.3321V99.9961H16.6641V94.4414H5.5551L5.5547 83.3324H16.6641V88.8871H83.3321V83.3324H94.4411ZM21.5231 21.5274V30.8321H12.2184V21.5274H21.5231ZM21.5231 21.5274V12.2227H30.8278V21.5274H21.5231ZM42.7731 53.6094V25.8324H44.4411V24.1644H55.5501V25.8324H57.2181V53.6094H72.2181V59.1641H66.6634V64.7188H61.1087V70.2735H55.554V75.8282H44.445V70.2735H38.8903V64.7188H33.3356V59.1641H27.7809V53.6094H42.7809H42.7731Z"
+          fill="#e5e5e5"
+        />
+      </svg>
+    </template>
+
+    <template class="key-icon">
+      <svg
+        width="100"
+        height="100"
+        viewBox="0 0 100 100"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        data-key="ArrowLeft"
+      >
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M5.5547 83.3324H0V11.1094H5.5547V83.3324ZM5.5547 11.1094V5.5547H11.1094V11.1094H5.5547ZM11.1094 5.5547V0H88.8864V5.5547H11.1094ZM88.8864 5.5547H94.4411V11.1094H88.8864V5.5547ZM94.4411 11.1094H99.9958V83.3324H94.4411V11.1094ZM94.4411 83.3324V94.4414H83.3321V99.9961H16.6641V94.4414H5.5551L5.5547 83.3324H16.6641V88.8871H83.3321V83.3324H94.4411ZM21.5231 21.5274V30.8321H12.2184V21.5274H21.5231ZM21.5231 21.5274V12.2227H30.8278V21.5274H21.5231ZM29.7184 44.4454V38.8907H35.2731V33.336H40.8278V27.7813H46.3825V42.7813H74.1595V44.4493H75.8275V55.5583H74.1595V57.2263H46.3825V72.2263H40.8278V66.6716H35.2731V61.1169H29.7184V55.5622H24.1637V44.4532H29.7184V44.4454Z"
+          fill="#e5e5e5"
+        />
+      </svg>
+    </template>
   </body>
 </html>
